@@ -9,5 +9,7 @@ target 'RxSwift_MusicApp' do
   pod 'RxSwift', '~> 5.1.0'
   pod 'RxCocoa', '~> 5.1.0'
   pod 'KKBOXOpenAPISwift'
+  pod 'Alamofire'
+  pod 'Kingfisher', '~> 6.0'
 
 end
