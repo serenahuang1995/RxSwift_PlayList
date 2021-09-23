@@ -17,7 +17,7 @@ class DataProvider {
             "Host": "api.kkbox.com",
             "Authorization": "Bearer \(token)"
         ]
-        let params =[
+        let params = [
             "territory": "TW",
             "offset": "0",
             "limit": "20"
