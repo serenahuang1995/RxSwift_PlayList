@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  Playlist.swift
 //  RxSwift_MusicApp
 //
 //  Created by 黃瀞萱 on 2021/9/22.
@@ -22,7 +22,7 @@ struct Track: Codable {
 struct Album: Codable {
     let id: String
     let name: String
-    let image: [Image]
+    let images: [Image]
 }
 
 struct Image: Codable {
