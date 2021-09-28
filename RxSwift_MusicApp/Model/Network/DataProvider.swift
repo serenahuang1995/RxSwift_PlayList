@@ -14,7 +14,7 @@ class DataProvider {
     
     private let bag = DisposeBag()
     
-    private func getData(token: String) {
+    func getData(token: String, completion: @escaping ((Tracks) -> Void)) {
         
         let url = URL(string: "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks")!
         let headers: HTTPHeaders = [
@@ -27,14 +27,25 @@ class DataProvider {
             "limit": "20"
         ]
         
-        AF.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Tracks.self) { response in
+        AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseDecodable(of: Tracks.self) { response in
             switch response.result {
             case .success(let tracks):
                 print("your data is \(tracks)")
+                completion(tracks)
             case .failure(let error):
                 print("you didn't got any data \(error)")
             }
+            
         }
+        
+//        AF.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Tracks.self) { response in
+//            switch response.result {
+//            case .success(let tracks):
+//                print("your data is \(tracks)")
+//            case .failure(let error):
+//                print("you didn't got any data \(error)")
+//            }
+//        }
     }
     
 }

@@ -16,6 +16,7 @@ class ListViewController: UIViewController {
     private let tableView = UITableView()
 //    private let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
     private let track = PublishSubject<[Track]>()
+    private var tracks: [Track] = []
     private let bag = DisposeBag()
 }
 
@@ -26,8 +27,11 @@ extension ListViewController {
         super.viewDidLoad()
         configureTableView()
         configureTableViewCell()
-        TokenProvider().getToken { result in
-            print(result)
+        TokenProvider().getToken { token in
+            print(token)
+            DataProvider().getData(token: token) { tracks in
+                self.tracks = tracks.data
+            }
         }
     }
     
@@ -40,7 +44,9 @@ extension ListViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.description())
-//        tableView.tableHeaderView
+        tableView.register(ListHeaderView.self, forHeaderFooterViewReuseIdentifier: ListHeaderView.description())
+        
+        tableView.tableHeaderView = ListHeaderView(reuseIdentifier: ListHeaderView.description())
     }
 }
 
@@ -53,12 +59,7 @@ extension ListViewController {
             .bind(to: tableView
             .rx
             .items(cellIdentifier: ListTableViewCell.description(), cellType: ListTableViewCell.self)) { row, track, cell in
-                
-                if row == 0 {
-                    cell.bannerImage.image = UIImage(named: "banner")
-                } else {
-                    cell.layoutCell(track: track)
-                }
+                cell.layoutCell(track: track)
             }
             .disposed(by: bag)
     }

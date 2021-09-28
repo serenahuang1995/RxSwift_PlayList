@@ -11,10 +11,10 @@ import KKBOXOpenAPISwift
 
 class TokenProvider {
     
-    private let api = KKBOXOpenAPI(clientID: "356b9d68c0521129d2d072de36f12b29", secret: "c73e102809b0430fe41a6be0038e6087")
+    let api = KKBOXOpenAPI(clientID: "356b9d68c0521129d2d072de36f12b29", secret: "c73e102809b0430fe41a6be0038e6087")
     
     func getToken(completion: @escaping (String) -> Void) {
-        
+
         do {
             _ = try api.fetchAccessTokenByClientCredential { result in
                 switch result {

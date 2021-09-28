@@ -18,6 +18,7 @@
 		0489E0E426FB26370068B066 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0E326FB26370068B066 /* TokenProvider.swift */; };
 		0489E0E826FB34250068B066 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0E726FB34250068B066 /* DataProvider.swift */; };
 		0489E0EA26FB34400068B066 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0E926FB34400068B066 /* Playlist.swift */; };
+		0489E1552702B05A0068B066 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E1542702B05A0068B066 /* ListHeaderView.swift */; };
 		F33BC802D9986BFBFE8DB84D /* Pods_RxSwift_MusicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 099254D3D4F60ECA80227602 /* Pods_RxSwift_MusicApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		0489E0E326FB26370068B066 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
 		0489E0E726FB34250068B066 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		0489E0E926FB34400068B066 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		0489E1542702B05A0068B066 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		099254D3D4F60ECA80227602 /* Pods_RxSwift_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FA92755864BAAD48146A4E /* Pods-RxSwift_MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift_MusicApp/Pods-RxSwift_MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BFD750B8D66280041A00E804 /* Pods-RxSwift_MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_MusicApp.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_MusicApp/Pods-RxSwift_MusicApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +108,8 @@
 		0489E0DB26FB13A80068B066 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0489E0E226FB26230068B066 /* Network */,
 				0489E0E926FB34400068B066 /* Playlist.swift */,
+				0489E0E226FB26230068B066 /* Network */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0489E0DE26FB232F0068B066 /* ListTableViewCell.swift */,
+				0489E1542702B05A0068B066 /* ListHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				0489E0DF26FB232F0068B066 /* ListTableViewCell.swift in Sources */,
 				0489E0E426FB26370068B066 /* TokenProvider.swift in Sources */,
+				0489E1552702B05A0068B066 /* ListHeaderView.swift in Sources */,
 				0489E0CA26FB12CB0068B066 /* ListViewController.swift in Sources */,
 				0489E0E826FB34250068B066 /* DataProvider.swift in Sources */,
 				0489E0C626FB12CB0068B066 /* AppDelegate.swift in Sources */,

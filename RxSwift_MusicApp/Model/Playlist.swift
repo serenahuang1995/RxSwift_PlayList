@@ -26,7 +26,7 @@ struct Album: Codable {
 }
 
 struct Image: Codable {
-    let weight: Int
+    let width: Int
     let height: Int
     let url: String
 }

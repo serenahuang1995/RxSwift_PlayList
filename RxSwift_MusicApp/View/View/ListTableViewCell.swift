@@ -13,13 +13,21 @@ import Kingfisher
 class ListTableViewCell: UITableViewCell {
     
 //    var viewModel: ViewModel?
-    let bannerImage = UIImageView()
     let albumImage = UIImageView()
-    let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
     let albumDescribe = UILabel()
     let collectionButton = UIButton()
     var passIndexPath: ((Int) -> Void)?
-
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        translatesAutoresizingMaskIntoConstraints = false
+        configureSubViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 //    func configure(viewModel: ViewModel) {
 //        self.viewModel = viewModel
 //
@@ -27,7 +35,23 @@ class ListTableViewCell: UITableViewCell {
     
     func configureSubViews() {
         
-//        [bannerImage, albumImage, al]
+        [albumImage, albumDescribe, collectionButton].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
+        
+        [albumImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+         albumImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+         
+         albumDescribe.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+         albumDescribe.leadingAnchor.constraint(equalTo: albumImage.trailingAnchor, constant: 16),
+         
+         collectionButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+         collectionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        ].forEach{ $0.isActive = true }
+        
+        collectionButton.setImage(UIImage(named: "collection"), for: .selected)
+        collectionButton.setImage(UIImage(named: "un-collection"), for: .normal)
     }
 
     func layoutCell(track: Track) {
