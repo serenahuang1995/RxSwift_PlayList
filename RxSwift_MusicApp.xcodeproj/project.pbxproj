@@ -13,7 +13,7 @@
 		0489E0CD26FB12CB0068B066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489E0CB26FB12CB0068B066 /* Main.storyboard */; };
 		0489E0CF26FB12CF0068B066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489E0CE26FB12CF0068B066 /* Assets.xcassets */; };
 		0489E0D226FB12CF0068B066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489E0D026FB12CF0068B066 /* LaunchScreen.storyboard */; };
-		0489E0DD26FB19F90068B066 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0DC26FB19F90068B066 /* ViewModel.swift */; };
+		0489E0DD26FB19F90068B066 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0DC26FB19F90068B066 /* ListViewModel.swift */; };
 		0489E0DF26FB232F0068B066 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0DE26FB232F0068B066 /* ListTableViewCell.swift */; };
 		0489E0E426FB26370068B066 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0E326FB26370068B066 /* TokenProvider.swift */; };
 		0489E0E826FB34250068B066 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E0E726FB34250068B066 /* DataProvider.swift */; };
@@ -31,7 +31,7 @@
 		0489E0CE26FB12CF0068B066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0489E0D126FB12CF0068B066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0489E0D326FB12CF0068B066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0489E0DC26FB19F90068B066 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0489E0DC26FB19F90068B066 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		0489E0DE26FB232F0068B066 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		0489E0E326FB26370068B066 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
 		0489E0E726FB34250068B066 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		0489E0DA26FB139A0068B066 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0489E0DC26FB19F90068B066 /* ViewModel.swift */,
+				0489E0DC26FB19F90068B066 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				0489E0CA26FB12CB0068B066 /* ListViewController.swift in Sources */,
 				0489E0E826FB34250068B066 /* DataProvider.swift in Sources */,
 				0489E0C626FB12CB0068B066 /* AppDelegate.swift in Sources */,
-				0489E0DD26FB19F90068B066 /* ViewModel.swift in Sources */,
+				0489E0DD26FB19F90068B066 /* ListViewModel.swift in Sources */,
 				0489E0C826FB12CB0068B066 /* SceneDelegate.swift in Sources */,
 				0489E0EA26FB34400068B066 /* Playlist.swift in Sources */,
 			);

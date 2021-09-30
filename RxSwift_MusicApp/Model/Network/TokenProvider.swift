@@ -13,14 +13,14 @@ class TokenProvider {
     
     let api = KKBOXOpenAPI(clientID: "356b9d68c0521129d2d072de36f12b29", secret: "c73e102809b0430fe41a6be0038e6087")
     
-    func getToken(completion: @escaping (String) -> Void) {
+    func getToken(completion: @escaping (Result<KKAccessToken, Error>) -> Void) {
 
         do {
             _ = try api.fetchAccessTokenByClientCredential { result in
                 switch result {
                 case .success(let token):
                     print("token: \(token)")
-                    completion(token.accessToken)
+                    completion(.success(token))
                 case .error(let error):
                     print("you got \(error)")
                 }

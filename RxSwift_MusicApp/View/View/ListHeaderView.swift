@@ -8,16 +8,19 @@
 import UIKit
 import RxSwift
 
-class ListHeaderView: UITableViewHeaderFooterView {
+class ListHeaderView: UIView {
     
     private let bannerImage = UIImageView()
-    private let bag = DisposeBag()
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        translatesAutoresizingMaskIntoConstraints = false
+//    override init(reuseIdentifier: String?) {
+//        super.init(reuseIdentifier: reuseIdentifier)
+//        translatesAutoresizingMaskIntoConstraints = false
+//        configureHeaderView()
+//
+//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureHeaderView()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -25,15 +28,20 @@ class ListHeaderView: UITableViewHeaderFooterView {
     }
     
     private func configureHeaderView() {
+
+        let imageName = "banner"
+        let image = UIImage(named: imageName)
+        let bannerView = UIImageView(image: image)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        bannerImage = bannerView
+        self.addSubview(bannerView)
         
-        contentView.addSubview(bannerImage)
-        bannerImage.image = UIImage(named: "banner")
-        
-        [bannerImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-         bannerImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-         bannerImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-         bannerImage.widthAnchor.constraint(equalToConstant: contentView.frame.width),
-         bannerImage.heightAnchor.constraint(equalToConstant: contentView.frame.width)
+        [bannerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+         bannerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+         bannerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+         bannerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+         bannerView.widthAnchor.constraint(equalToConstant: self.frame.width),
+         bannerView.heightAnchor.constraint(equalToConstant: self.frame.width)
         ].forEach{ $0.isActive = true }
     }
 }

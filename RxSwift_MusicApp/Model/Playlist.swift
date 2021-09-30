@@ -34,7 +34,7 @@ struct Image: Codable {
 struct Paging: Codable {
     let offset: Int
     let limit: Int
-    let next: String
+    let next: String?
 }
 
 struct Summary: Codable {

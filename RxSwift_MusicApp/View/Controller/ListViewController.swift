@@ -10,13 +10,11 @@ import RxCocoa
 import RxSwift
 
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UIScrollViewDelegate {
     
-    private let imageView = UIImageView()
+    private let bannerView = UIImageView()
     private let tableView = UITableView()
-//    private let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
-    private let track = PublishSubject<[Track]>()
-    private var tracks: [Track] = []
+    private let viewModel = ListViewModel()
     private let bag = DisposeBag()
 }
 
@@ -26,41 +24,52 @@ extension ListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        configureTableViewCell()
-        TokenProvider().getToken { token in
-            print(token)
-            DataProvider().getData(token: token) { tracks in
-                self.tracks = tracks.data
-            }
-        }
+        configureTableViewCell(viewMoedl: viewModel)
+        viewModel.fetchToken()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     private func configureTableView() {
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: -48).isActive = true
+//        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.description())
-        tableView.register(ListHeaderView.self, forHeaderFooterViewReuseIdentifier: ListHeaderView.description())
+        tableView.delegate = self
         
-        tableView.tableHeaderView = ListHeaderView(reuseIdentifier: ListHeaderView.description())
+        let headerView = ListHeaderView()
+        headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.width)
+        tableView.tableHeaderView = headerView
+        
+        tableView.allowsSelection = false
     }
 }
 
-//MARK: - Rx setup
 extension ListViewController {
     
-    func configureTableViewCell() {
-        
-        track
+    func configureTableViewCell(viewMoedl: ListViewModel) {
+        viewModel.tracks
             .bind(to: tableView
-            .rx
-            .items(cellIdentifier: ListTableViewCell.description(), cellType: ListTableViewCell.self)) { row, track, cell in
-                cell.layoutCell(track: track)
+                    .rx
+                    .items(cellIdentifier: ListTableViewCell.description(),
+                           cellType: ListTableViewCell.self)) { [unowned self] row, track, cell in
+                cell.layoutCell(track: track, viewModel: viewModel)
+//                cell.collectionButtonTapped(track: track, viewModel: self.viewModel)
             }
             .disposed(by: bag)
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

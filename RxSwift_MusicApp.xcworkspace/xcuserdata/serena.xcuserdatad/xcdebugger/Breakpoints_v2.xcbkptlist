@@ -3,4 +3,86 @@
    uuid = "9B50703C-10D9-403D-BB6B-B6E735400745"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E09BB839-11A4-4BE1-B088-555E98525868"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift_MusicApp/View/View/ListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "collectionButtonTapped(track:viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "000DB42B-E3A6-466C-9DF8-F0D7797821FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift_MusicApp/View/View/ListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "collectionButtonTapped(track:viewModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "000DB42B-E3A6-466C-9DF8-F0D7797821FC - 2b5544ba10861458"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in RxSwift_MusicApp.ListTableViewCell.collectionButtonTapped(track: RxSwift_MusicApp.Track, viewModel: RxSwift_MusicApp.ListViewModel) -&gt; ()"
+                  moduleName = "RxSwift_MusicApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/serena/Work%20Space/RxSwift_MusicApp/RxSwift_MusicApp/View/View/ListTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "583">
+               </Location>
+               <Location
+                  uuid = "000DB42B-E3A6-466C-9DF8-F0D7797821FC - f7b0d124b6632808"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; Swift.Bool in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in RxSwift_MusicApp.ListTableViewCell.collectionButtonTapped(track: RxSwift_MusicApp.Track, viewModel: RxSwift_MusicApp.ListViewModel) -&gt; ()"
+                  moduleName = "RxSwift_MusicApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/serena/Work%20Space/RxSwift_MusicApp/RxSwift_MusicApp/View/View/ListTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFB464C8-5372-4D02-8005-DD7A5E5026DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RxSwift_MusicApp/View/View/ListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "collectionButtonTapped(track:viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

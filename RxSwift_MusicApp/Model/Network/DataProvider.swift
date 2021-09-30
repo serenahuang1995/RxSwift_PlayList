@@ -9,17 +9,18 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Alamofire
+import KKBOXOpenAPISwift
 
 class DataProvider {
     
     private let bag = DisposeBag()
     
-    func getData(token: String, completion: @escaping ((Tracks) -> Void)) {
+    func getData(token: KKAccessToken, completion: @escaping (Result<[Track], Error>) -> Void) {
         
         let url = URL(string: "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks")!
         let headers: HTTPHeaders = [
             "Host": "api.kkbox.com",
-            "Authorization": "Bearer \(token)"
+            "Authorization": "Bearer \(token.accessToken)"
         ]
         let params = [
             "territory": "TW",
@@ -27,25 +28,15 @@ class DataProvider {
             "limit": "20"
         ]
         
-        AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseDecodable(of: Tracks.self) { response in
+        AF.request(url, method: .get, parameters: params, encoding: URLEncoding(), headers: headers).responseDecodable(of: Tracks.self) { response in
             switch response.result {
             case .success(let tracks):
-                print("your data is \(tracks)")
-                completion(tracks)
+                print("your data is \(tracks.data)")
+                completion(.success(tracks.data))
             case .failure(let error):
-                print("you didn't got any data \(error)")
+                completion(.failure(error))
             }
-            
         }
-        
-//        AF.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Tracks.self) { response in
-//            switch response.result {
-//            case .success(let tracks):
-//                print("your data is \(tracks)")
-//            case .failure(let error):
-//                print("you didn't got any data \(error)")
-//            }
-//        }
     }
     
 }
